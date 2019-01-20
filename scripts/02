@@ -1,0 +1,4 @@
+#! /bin/bash
+
+pkill -u $1
+deluser $1

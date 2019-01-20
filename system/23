@@ -1,0 +1,7 @@
+#1 - En session graphique
+- Log out
+- Enter login maurice
+- Enter password
+
+#2 - En ssh
+ssh yboumale@10.11.100.130

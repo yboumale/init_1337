@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ ! $1 ]
+then
+	echo "[usage] entre en parametre le nom utilisateur"
+	exit 1
+fi
+	NOM=$1
+if grep $NOM /etc/passwd > /dev/null
+then
+	echo "utilisateur : $NOM existe deja\n"
+	echo "===============MENU================="
+	echo "0 - suprimmer utillisateur"
+	echo "1 - quitter le scripte\n"
+	read -p 'entrez votre choix : ' choix
+	if [ $choix = "0" ]
+	then
+		pkill -u $NOM
+		deluser $NOM
+	elif [ $choix = "1" ]
+	then
+		exit 0
+	else
+		exit 0
+	fi
+	exit 0
+else
+	echo "utilisateur n'est pas existe"
+fi

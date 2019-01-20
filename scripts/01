@@ -1,0 +1,6 @@
+#! /bin/bash
+IFS=':'
+while  read  user pass uid gid full home shell
+do
+	echo "$user, $uid, $home"
+done < /etc/passwd
